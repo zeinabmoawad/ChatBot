@@ -1,0 +1,4 @@
+chatbot/Scripts/
+chatbot/Lib/
+*.cfg
+*.pkl
