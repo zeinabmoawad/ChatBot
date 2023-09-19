@@ -59,7 +59,6 @@ for doc in documents:
     # create our bag of words array with 1, if word match found in current pattern
     for w in words:
         bag.append(1) if w in pattern_words else bag.append(0)
-
     # output is a '0' for each tag and '1' for current tag (for each pattern)
     output_row = list(output_empty)
     output_row[classes.index(doc[1])] = 1
@@ -74,6 +73,7 @@ max_length = max(max(len(sub_list) for sub_list in sublist) for sublist in train
 
 # Pad the sub-lists with zeros to match the maximum length
 padded_list = [[sub_list + [0] * (max_length - len(sub_list)) for sub_list in sublist] for sublist in training]
+
 training = np.array(padded_list)
 # create train and test lists. X - patterns, Y - intents
 train_x = list(training[:,0])
